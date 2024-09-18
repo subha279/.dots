@@ -1,0 +1,12 @@
+[plugin]
+deps = [
+  { use = "yazi-rs/plugins#full-border", commit = "a3ee717" },
+  { use = "KKV9/compress", commit = "60b24af" },
+  { use = "imsi32/yatline", commit = "f5a56cb" },
+  { use = "imsi32/yatline-githead", commit = "2f2b000" },
+  { use = "yazi-rs/plugins#smart-filter", commit = "a3ee717" },
+  { use = "yazi-rs/plugins#hide-preview", commit = "a3ee717" },
+]
+
+[flavor]
+deps = []
