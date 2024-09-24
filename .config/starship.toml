@@ -1,107 +1,32 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
 format = """
-$git_branch\
-$git_status\
-$python\
-$nodejs\
-$c\
-$cpp\
-$rust\
-$java\
-$golang\
-$docker_context\
-$kubernetes
-$os [$username](yellow)[@](cyan)[$hostname](green) $directory$character
-"""
+[╭ ](bold green)$username$directory$battery$all$line_break$character"""
+
+right_format = """$git_branch$git_state$git_status$time$cmd_duration"""
 
 [character]
-success_symbol = '[#](bold green)'
-error_symbol = '[#](bold red)'
+success_symbol = '[╰─>](bold green)'
+error_symbol = '[╰─>](bold red)'
+
+[git_branch]
+format = '[ $symbol$branch]($style) '
+style = 'cyan'
+
+[directory]
+format = "[](fg:#a3ca5c bg:none)[$path]($style)[ ](fg:#a3ca5c bg:none)"
+style = "fg:#000000 bg:#a3ca5c"
+truncate_to_repo=false
 
 [username]
 show_always = true
-format = "[$user]($style)"
 
-[hostname]
-ssh_only = false
-format = "[$hostname]($style)"
-
-[c]
-format = "[$symbol($version )]($style)"
-symbol = " "
-
-[directory]
-read_only = " "
-
-[docker_context]
-symbol = " "
-format = "[$symbol$context]($style)"
-
-[elm]
-symbol = " "
-
-[golang]
-symbol = " "
-format = "[$symbol($version )]($style)"
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-format = "[$symbol($version )]($style)"
-
-[memory_usage]
-symbol = " "
-
-[nodejs]
-format = "[$symbol($version )]($style)"
-symbol = " "
-
-[os]
+[time]
 disabled = false
 
-[os.symbols]
-Alpine = " "
-Amazon = " "
-Android = " "
-Arch = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "﯑ "
-Gentoo = " "
-HardenedBSD = "ﲊ "
-Illumos = " "
-Linux = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-OpenBSD = " "
-openSUSE = " "
-OracleLinux = " "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-Redox = " "
-Solus = "ﴱ "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Windows = " "
+[cmd_duration]
+min_time = 0
+disabled = false
 
-[package]
-symbol = " "
-format = "[$symbol($version )]($style)"
-
-[python]
-symbol = " "
-format = "[$symbol($version )]($style)"
+[battery]
+disabled = false
