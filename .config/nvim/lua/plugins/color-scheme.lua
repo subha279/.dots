@@ -1,16 +1,16 @@
 return {
-  "navarasu/onedark.nvim",
+  "folke/tokyonight.nvim",
   lazy = false,
-  name = "onedark",
+  name = "tokyonight",
   priority = 1000,
   config = function()
-    require("onedark").setup({
+    require("tokyonight").setup({
       transparent = true,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
       },
     })
-    vim.cmd.colorscheme "onedark"
+    vim.cmd.colorscheme "tokyonight"
   end
 }
